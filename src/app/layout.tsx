@@ -10,8 +10,8 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-    title: "EDIT ME + CHANGE PACKAGE.JSON",
-    description: "EDIT ME + CHANGE PACKAGE.JSON",
+    title: "change me",
+    description: "change me",
     icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -19,17 +19,15 @@ export default function RootLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en">
-            <Providers>
-                <body
-                    className={cn(
-                        "min-h-screen bg-background font-sans antialiased transition-colors",
-                        publicSans.variable
-                    )}
-                >
-                    {children}
-                </body>
-            </Providers>
+        <html suppressHydrationWarning lang="en">
+            <body
+                className={cn(
+                    "min-h-screen bg-background font-sans antialiased transition-colors",
+                    publicSans.variable
+                )}
+            >
+                <Providers>{children}</Providers>
+            </body>
         </html>
     );
 }
