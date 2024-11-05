@@ -10,6 +10,9 @@ const config = {
 	],
 	theme: {
 		extend: {
+			container: {
+				center: true,
+			},
 			fontFamily: {
 				sans: ['var(--font-public-sans)', 'sans-serif'],
 			},
