@@ -1,3 +1,5 @@
+import Providers from "@/components/Providers";
+import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { type Metadata } from "next";
 import { Public_Sans } from "next/font/google";
@@ -18,7 +20,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
-            <body className={publicSans.variable}>{children}</body>
+            <Providers>
+                <body
+                    className={cn(
+                        "min-h-screen bg-background font-sans antialiased transition-colors",
+                        publicSans.variable
+                    )}
+                >
+                    {children}
+                </body>
+            </Providers>
         </html>
     );
 }
