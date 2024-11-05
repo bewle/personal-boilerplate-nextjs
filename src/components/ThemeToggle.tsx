@@ -11,7 +11,11 @@ export default function ThemeToggle() {
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-            {theme === "dark" ? <Moon /> : <Sun />}
+            {theme === "dark" ? (
+                <Moon className="transition-transform motion-preset-shrink" />
+            ) : (
+                <Sun className="transition-transform motion-preset-shrink" />
+            )}
         </Button>
     );
 }
